@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarioMendonca.SpeechPlanning.Application.DTO\MarioMendonca.SpeechPlanning.Application.DTO.csproj" />
+    <ProjectReference Include="..\MarioMendonca.SpeechPlanning.Domain\MarioMendonca.SpeechPlanning.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

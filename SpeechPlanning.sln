@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1196B530-41AE-42B6-A49B-36419A4D4D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Application", "src\MarioMendonca.SpeechPlanning.Application\MarioMendonca.SpeechPlanning.Application.csproj", "{29429763-485B-49B8-B5DB-C9B4E5A602E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Application.DTO", "src\MarioMendonca.SpeechPlanning.Application.DTO\MarioMendonca.SpeechPlanning.Application.DTO.csproj", "{54D22F61-565D-4234-87B0-F1FA6C3EF7AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Domain", "src\MarioMendonca.SpeechPlanning.Domain\MarioMendonca.SpeechPlanning.Domain.csproj", "{6C2B87AD-4D01-41F5-9918-1A1D7873287E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Domain.Core", "src\MarioMendonca.SpeechPlanning.Domain.Core\MarioMendonca.SpeechPlanning.Domain.Core.csproj", "{231F50AA-389F-44D6-8062-7E938D4D8FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter", "src\MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter\MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.csproj", "{6746638A-910F-4D8C-B3AB-5B8227404933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.IOC", "src\MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.IOC\MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.IOC.csproj", "{3BBEC4CC-9B03-4713-8646-1E63197CEE21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Infrastructure.Data", "src\MarioMendonca.SpeechPlanning.Infrastructure.Data\MarioMendonca.SpeechPlanning.Infrastructure.Data.csproj", "{7C02260E-8141-4542-B235-6F38189C0EF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Infrastructure.Repository", "src\MarioMendonca.SpeechPlanning.Infrastructure.Repository\MarioMendonca.SpeechPlanning.Infrastructure.Repository.csproj", "{1DB2AF00-A9E5-4996-9428-562564BDB628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Domain.Services", "src\MarioMendonca.SpeechPlanning.Domain.Services\MarioMendonca.SpeechPlanning.Domain.Services.csproj", "{FB6B970C-3870-4061-B3B6-C177BE485007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarioMendonca.SpeechPlanning.Presentation", "src\MarioMendonca.SpeechPlanning.Presentation\MarioMendonca.SpeechPlanning.Presentation.csproj", "{E877B97B-82D9-48F6-B5C8-5EF541964227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29429763-485B-49B8-B5DB-C9B4E5A602E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29429763-485B-49B8-B5DB-C9B4E5A602E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29429763-485B-49B8-B5DB-C9B4E5A602E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29429763-485B-49B8-B5DB-C9B4E5A602E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D22F61-565D-4234-87B0-F1FA6C3EF7AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D22F61-565D-4234-87B0-F1FA6C3EF7AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D22F61-565D-4234-87B0-F1FA6C3EF7AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D22F61-565D-4234-87B0-F1FA6C3EF7AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2B87AD-4D01-41F5-9918-1A1D7873287E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2B87AD-4D01-41F5-9918-1A1D7873287E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2B87AD-4D01-41F5-9918-1A1D7873287E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2B87AD-4D01-41F5-9918-1A1D7873287E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231F50AA-389F-44D6-8062-7E938D4D8FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231F50AA-389F-44D6-8062-7E938D4D8FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231F50AA-389F-44D6-8062-7E938D4D8FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231F50AA-389F-44D6-8062-7E938D4D8FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6746638A-910F-4D8C-B3AB-5B8227404933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6746638A-910F-4D8C-B3AB-5B8227404933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6746638A-910F-4D8C-B3AB-5B8227404933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6746638A-910F-4D8C-B3AB-5B8227404933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BBEC4CC-9B03-4713-8646-1E63197CEE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBEC4CC-9B03-4713-8646-1E63197CEE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBEC4CC-9B03-4713-8646-1E63197CEE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBEC4CC-9B03-4713-8646-1E63197CEE21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C02260E-8141-4542-B235-6F38189C0EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C02260E-8141-4542-B235-6F38189C0EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C02260E-8141-4542-B235-6F38189C0EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C02260E-8141-4542-B235-6F38189C0EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB2AF00-A9E5-4996-9428-562564BDB628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB2AF00-A9E5-4996-9428-562564BDB628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB2AF00-A9E5-4996-9428-562564BDB628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB2AF00-A9E5-4996-9428-562564BDB628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB6B970C-3870-4061-B3B6-C177BE485007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB6B970C-3870-4061-B3B6-C177BE485007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB6B970C-3870-4061-B3B6-C177BE485007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB6B970C-3870-4061-B3B6-C177BE485007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E877B97B-82D9-48F6-B5C8-5EF541964227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E877B97B-82D9-48F6-B5C8-5EF541964227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E877B97B-82D9-48F6-B5C8-5EF541964227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E877B97B-82D9-48F6-B5C8-5EF541964227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29429763-485B-49B8-B5DB-C9B4E5A602E5} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{54D22F61-565D-4234-87B0-F1FA6C3EF7AC} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{6C2B87AD-4D01-41F5-9918-1A1D7873287E} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{231F50AA-389F-44D6-8062-7E938D4D8FC8} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{6746638A-910F-4D8C-B3AB-5B8227404933} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{3BBEC4CC-9B03-4713-8646-1E63197CEE21} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{7C02260E-8141-4542-B235-6F38189C0EF4} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{1DB2AF00-A9E5-4996-9428-562564BDB628} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{FB6B970C-3870-4061-B3B6-C177BE485007} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+		{E877B97B-82D9-48F6-B5C8-5EF541964227} = {1196B530-41AE-42B6-A49B-36419A4D4D78}
+	EndGlobalSection
+EndGlobal
