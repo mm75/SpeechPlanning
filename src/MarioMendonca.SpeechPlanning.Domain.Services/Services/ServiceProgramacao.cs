@@ -6,11 +6,11 @@ namespace MarioMendonca.SpeechPlanning.Domain.Services.Services
 {
     public class ServiceProgramacao : ServiceBase<Programacao>, IServiceProgramacao
     {
-        public readonly IRepositoryProgramacao _RepositoryProgramacao;
+        public readonly IRepositoryProgramacao _repositoryProgramacao;
         
         public ServiceProgramacao(IRepositoryProgramacao repositoryProgramacao) : base(repositoryProgramacao)
         {
-            _RepositoryProgramacao = repositoryProgramacao;
+            _repositoryProgramacao = repositoryProgramacao;
         }
     }
 }

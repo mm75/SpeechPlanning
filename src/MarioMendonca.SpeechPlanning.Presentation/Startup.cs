@@ -1,5 +1,6 @@
 using System.IO.Compression;
 using Autofac;
+using MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map;
 using MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.IOC;
 using MarioMendonca.SpeechPlanning.Infrastructure.Data;
 using MarioMendonca.SpeechPlanning.Presentation.Extensions;
@@ -26,6 +27,8 @@ namespace MarioMendonca.SpeechPlanning.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.RegisterMappings();
 
             string connection = Configuration["SqlConnection:SqlConnectionString"];
             services.AddDbContext<SqlContext>(options => options.UseSqlServer(connection));

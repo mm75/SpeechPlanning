@@ -4,14 +4,16 @@ using MarioMendonca.SpeechPlanning.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    partial class SqlContextModelSnapshot : ModelSnapshot
+    [Migration("20201120214305_updated")]
+    partial class updated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -257,7 +259,7 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
             modelBuilder.Entity("MarioMendonca.SpeechPlanning.Domain.Models.Esboco", b =>
                 {
                     b.HasOne("MarioMendonca.SpeechPlanning.Domain.Models.Idioma", "Idioma")
-                        .WithMany("Esbocos")
+                        .WithMany()
                         .HasForeignKey("IdiomaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

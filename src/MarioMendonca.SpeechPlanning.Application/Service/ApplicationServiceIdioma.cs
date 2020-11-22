@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using MarioMendonca.SpeechPlanning.Application.DTO.DTO;
 using MarioMendonca.SpeechPlanning.Application.Interfaces;
 using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Services;
@@ -28,6 +29,12 @@ namespace MarioMendonca.SpeechPlanning.Application.Service
         {
             var objIdioma = _serviceIdioma.GetById(id);
             return _mapperIdioma.MapperToDTO(objIdioma);
+        }
+
+        public IEnumerable<IdiomaDTO> GetByNome(string nome)
+        {
+            var objIdiomas = _serviceIdioma.GetByNome(nome);
+            return _mapperIdioma.MapperListIdiomas(objIdiomas);
         }
 
         public IEnumerable<IdiomaDTO> GetAll()

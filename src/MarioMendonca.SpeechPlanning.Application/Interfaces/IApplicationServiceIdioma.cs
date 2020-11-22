@@ -10,6 +10,8 @@ namespace MarioMendonca.SpeechPlanning.Application.Interfaces
 
         IdiomaDTO GetById(Guid id);
 
+        IEnumerable<IdiomaDTO> GetByNome(string nome);
+
         IEnumerable<IdiomaDTO> GetAll();
 
         void Update(IdiomaDTO obj);

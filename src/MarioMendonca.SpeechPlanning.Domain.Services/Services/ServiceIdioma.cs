@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Repositorys;
 using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Services;
 using MarioMendonca.SpeechPlanning.Domain.Models;
@@ -12,5 +14,11 @@ namespace MarioMendonca.SpeechPlanning.Domain.Services.Services
         {
             _RepositoryIdioma = repositoryIdioma;
         }
+        
+        public IEnumerable<Idioma> GetByNome(string nome)
+        {
+            return _RepositoryIdioma.GetByNome(nome).Cast<Idioma>().AsEnumerable();
+        }
+
     }
 }

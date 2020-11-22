@@ -45,6 +45,17 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
             return Ok(_applicationServiceIdioma.GetById(id));
         }
 
+        [HttpGet]
+        [Route("/idioma/search/{nome}", Name = "IdiomaGetByNome")]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(IdiomaDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<IEnumerable<Idioma>> GetByNome(string nome)
+        {
+            return Ok(_applicationServiceIdioma.GetByNome(nome));
+        }
+
         [HttpPost]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(IdiomaDTO), StatusCodes.Status200OK)]
