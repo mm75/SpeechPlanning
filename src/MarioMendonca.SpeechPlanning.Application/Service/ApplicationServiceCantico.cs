@@ -30,6 +30,12 @@ namespace MarioMendonca.SpeechPlanning.Application.Service
             return _mapperCantico.MapperToDTO(objCantico);
         }
 
+        public IEnumerable<CanticoDTO> GetByTitulo(string titulo)
+        {
+            var objCanticos = _serviceCantico.GetByTitulo(titulo);
+            return _mapperCantico.MapperListCanticos(objCanticos);
+        }
+
         public IEnumerable<CanticoDTO> GetAll()
         {
             var objCanticos = _serviceCantico.GetAll();

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Repositorys;
 using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Services;
 using MarioMendonca.SpeechPlanning.Domain.Models;
@@ -11,6 +12,11 @@ namespace MarioMendonca.SpeechPlanning.Domain.Services.Services
         public ServiceOrador(IRepositoryOrador repositoryOrador) : base(repositoryOrador)
         {
             _RepositoryOrador = repositoryOrador;
+        }
+
+        public IEnumerable<Orador> GetByNome(string nome)
+        {
+            return _RepositoryOrador.GetByNome(nome);
         }
     }
 }

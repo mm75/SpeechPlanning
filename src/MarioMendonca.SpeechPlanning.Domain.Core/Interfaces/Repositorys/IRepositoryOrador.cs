@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using MarioMendonca.SpeechPlanning.Domain.Models;
 
 namespace MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Repositorys
 {
     public interface IRepositoryOrador : IRepositoryBase<Orador>
     {
-        
+        public IEnumerable<Orador> GetByNome(string nome);
     }
 }

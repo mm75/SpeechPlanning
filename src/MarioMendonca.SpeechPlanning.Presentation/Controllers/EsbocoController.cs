@@ -45,6 +45,17 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
             return Ok(_applicationServiceEsboco.GetById(id));
         }
 
+        [HttpGet]
+        [Route("/esboco/search/{titulo}", Name = "EsbocoGetByTitulo")]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(EsbocoDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<IEnumerable<EsbocoDTO>> GetByTitulo(string titulo)
+        {
+            return Ok(_applicationServiceEsboco.GetByTitulo(titulo));
+        }
+
         [HttpPost]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(EsbocoDTO), StatusCodes.Status200OK)]

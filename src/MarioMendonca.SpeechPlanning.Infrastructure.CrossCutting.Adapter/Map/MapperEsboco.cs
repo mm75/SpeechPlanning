@@ -37,7 +37,8 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
                     Id = item.Id,
                     Numero = item.Numero,
                     Titulo = item.Titulo,
-                    IdiomaId = item.IdiomaId
+                    IdiomaId = item.IdiomaId,
+                    IdiomaNome = item.Idioma.Nome
                 };
 
                 esbocoDtos.Add(esbocoDto);
@@ -53,8 +54,8 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
                 Id = esboco.Id,
                 Numero = esboco.Numero,
                 Titulo = esboco.Titulo,
-                IdiomaId = esboco.IdiomaId/*,
-                Idioma = esboco.Idioma*/
+                IdiomaId = esboco.IdiomaId,
+                IdiomaNome = esboco.Idioma.Nome
             };
 
             return esbocoDto;

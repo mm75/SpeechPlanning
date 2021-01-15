@@ -9,6 +9,8 @@ namespace MarioMendonca.SpeechPlanning.Application.Interfaces
         void Add(CongregacaoDTO obj);
 
         CongregacaoDTO GetById(Guid id);
+        
+        IEnumerable<CongregacaoDTO> GetByNome(string nome);
 
         IEnumerable<CongregacaoDTO> GetAll();
 

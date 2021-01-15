@@ -53,10 +53,10 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     DeletedAt = table.Column<DateTime>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
                     Version = table.Column<int>(nullable: false),
-                    CongregacaoId = table.Column<int>(nullable: false),
-                    OradorId = table.Column<int>(nullable: false),
-                    EsbocoId = table.Column<int>(nullable: false),
-                    CanticoId = table.Column<int>(nullable: false),
+                    CongregacaoId = table.Column<Guid>(nullable: false),
+                    OradorId = table.Column<Guid>(nullable: false),
+                    EsbocoId = table.Column<Guid>(nullable: false),
+                    CanticoId = table.Column<Guid>(nullable: false),
                     Data = table.Column<DateTime>(nullable: false),
                     Hora = table.Column<string>(nullable: true)
                 },
@@ -77,19 +77,18 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     Version = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
                     Telefone = table.Column<string>(nullable: true),
-                    CongregacaoId = table.Column<int>(nullable: false),
-                    Ativo = table.Column<bool>(nullable: false),
-                    CongregacaoId1 = table.Column<Guid>(nullable: true)
+                    CongregacaoId = table.Column<Guid>(nullable: false),
+                    Ativo = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Oradores", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Oradores_Congregacoes_CongregacaoId1",
-                        column: x => x.CongregacaoId1,
+                        name: "FK_Oradores_Congregacoes_CongregacaoId",
+                        column: x => x.CongregacaoId,
                         principalTable: "Congregacoes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -102,6 +101,7 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     DeletedAt = table.Column<DateTime>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
                     Version = table.Column<int>(nullable: false),
+                    Numero = table.Column<int>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
                     IdiomaId = table.Column<int>(nullable: false),
                     IdiomaId1 = table.Column<Guid>(nullable: true)
@@ -127,19 +127,19 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     DeletedAt = table.Column<DateTime>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
                     Version = table.Column<int>(nullable: false),
+                    Numero = table.Column<int>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
-                    IdiomaId = table.Column<int>(nullable: false),
-                    IdiomaId1 = table.Column<Guid>(nullable: true)
+                    IdiomaId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Esbocos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Esbocos_Idiomas_IdiomaId1",
-                        column: x => x.IdiomaId1,
+                        name: "FK_Esbocos_Idiomas_IdiomaId",
+                        column: x => x.IdiomaId,
                         principalTable: "Idiomas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -148,14 +148,14 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                 column: "IdiomaId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Esbocos_IdiomaId1",
+                name: "IX_Esbocos_IdiomaId",
                 table: "Esbocos",
-                column: "IdiomaId1");
+                column: "IdiomaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Oradores_CongregacaoId1",
+                name: "IX_Oradores_CongregacaoId",
                 table: "Oradores",
-                column: "CongregacaoId1");
+                column: "CongregacaoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

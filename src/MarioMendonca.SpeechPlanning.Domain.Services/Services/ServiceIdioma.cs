@@ -17,7 +17,7 @@ namespace MarioMendonca.SpeechPlanning.Domain.Services.Services
         
         public IEnumerable<Idioma> GetByNome(string nome)
         {
-            return _RepositoryIdioma.GetByNome(nome).Cast<Idioma>().AsEnumerable();
+            return _RepositoryIdioma.GetByNome(nome).AsEnumerable();
         }
 
     }

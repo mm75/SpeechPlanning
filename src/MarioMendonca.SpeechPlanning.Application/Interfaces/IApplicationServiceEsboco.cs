@@ -9,6 +9,8 @@ namespace MarioMendonca.SpeechPlanning.Application.Interfaces
         void Add(EsbocoDTO obj);
 
         EsbocoDTO GetById(Guid id);
+        
+        IEnumerable<EsbocoDTO> GetByTitulo(string titulo);
 
         IEnumerable<EsbocoDTO> GetAll();
 

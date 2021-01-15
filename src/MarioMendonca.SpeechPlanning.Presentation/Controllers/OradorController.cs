@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using MarioMendonca.SpeechPlanning.Application.DTO.DTO;
 using MarioMendonca.SpeechPlanning.Application.Interfaces;
-using MarioMendonca.SpeechPlanning.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,7 +28,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         [ProducesResponseType(typeof(OradorDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<IEnumerable<Orador>> GetAll()
+        public ActionResult<IEnumerable<OradorDTO>> GetAll()
         {
             return Ok(_applicationServiceOrador.GetAll());
         }
@@ -43,6 +42,17 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         public ActionResult<string> GetById(Guid id)
         {
             return Ok(_applicationServiceOrador.GetById(id));
+        }
+
+        [HttpGet]
+        [Route("/orador/search/{nome}", Name = "OradorGetByNome")]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(OradorDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<IEnumerable<OradorDTO>> GetByNome(string nome)
+        {
+            return Ok(_applicationServiceOrador.GetByNome(nome));
         }
 
         [HttpPost]

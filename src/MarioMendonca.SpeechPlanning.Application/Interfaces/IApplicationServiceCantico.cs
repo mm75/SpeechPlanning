@@ -9,7 +9,9 @@ namespace MarioMendonca.SpeechPlanning.Application.Interfaces
         void Add(CanticoDTO obj);
 
         CanticoDTO GetById(Guid id);
-
+        
+        IEnumerable<CanticoDTO> GetByTitulo(string titulo);
+        
         IEnumerable<CanticoDTO> GetAll();
 
         void Update(CanticoDTO obj);

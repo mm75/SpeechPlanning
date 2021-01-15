@@ -33,6 +33,12 @@ namespace MarioMendonca.SpeechPlanning.Application.Service
             return _mapper.Map<EsbocoDTO>(objEsboco);
         }
 
+        public IEnumerable<EsbocoDTO> GetByTitulo(string titulo)
+        {
+            var objEsbocos = _serviceEsboco.GetByTitulo(titulo);
+            return _mapperEsboco.MapperListEsbocos(objEsbocos);
+        }
+
         public IEnumerable<EsbocoDTO> GetAll()
         {
             var objEsbocos = _serviceEsboco.GetAll();

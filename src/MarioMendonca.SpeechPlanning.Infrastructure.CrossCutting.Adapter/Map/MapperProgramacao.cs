@@ -21,6 +21,7 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
             {
                 Id = programacaoDto.Id,
                 CongregacaoId = programacaoDto.CongregacaoId,
+                OradorId = programacaoDto.OradorId,
                 EsbocoId = programacaoDto.EsbocoId,
                 CanticoId = programacaoDto.CanticoId,
                 Data = programacaoDto.Data,
@@ -38,8 +39,13 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
                 {
                     Id = item.Id,
                     CongregacaoId = item.CongregacaoId,
+                    CongregacaoNome = item.Congregacao.Nome,
+                    OradorId = item.OradorId,
+                    OradorNome = item.Orador.Nome,
                     EsbocoId = item.EsbocoId,
+                    EsbocoTitulo = item.Esboco.Titulo,
                     CanticoId = item.CanticoId,
+                    CanticoTitulo = item.Cantico.Titulo,
                     Data = item.Data,
                     Hora = item.Hora
                 };
@@ -56,8 +62,13 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
             {
                 Id = programacao.Id,
                 CongregacaoId = programacao.CongregacaoId,
+                CongregacaoNome = programacao.Congregacao.Nome,
+                OradorId = programacao.OradorId,
+                OradorNome = programacao.Orador.Nome,
                 EsbocoId = programacao.EsbocoId,
+                EsbocoTitulo = programacao.Esboco.Titulo,
                 CanticoId = programacao.CanticoId,
+                CanticoTitulo = programacao.Cantico.Titulo,
                 Data = programacao.Data,
                 Hora = programacao.Hora
             };

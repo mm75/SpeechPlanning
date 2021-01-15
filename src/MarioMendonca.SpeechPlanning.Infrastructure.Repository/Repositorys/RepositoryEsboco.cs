@@ -20,12 +20,19 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositorys
 
         public override Esboco GetById(Guid id)
         {
-            return _context.Esbocos.Include(x => x.Idioma).First();
+            return _context.Esbocos.Include(x => x.Idioma).FirstOrDefault();
         }
 
         public override IEnumerable<Esboco> GetAll()
         {
             return _context.Esbocos.Include(x => x.Idioma).ToList();
+        }
+
+        public IEnumerable<Esboco> GetByTitulo(string titulo)
+        {
+            return _context.Set<Esboco>()
+                .Where(i => EF.Functions.Like(i.Titulo, $"{titulo}%"))
+                .Include(x => x.Idioma).ToList();
         }
     }
 }

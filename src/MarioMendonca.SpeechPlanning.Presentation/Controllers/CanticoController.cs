@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using MarioMendonca.SpeechPlanning.Application.DTO.DTO;
 using MarioMendonca.SpeechPlanning.Application.Interfaces;
-using MarioMendonca.SpeechPlanning.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,7 +28,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         [ProducesResponseType(typeof(CanticoDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<IEnumerable<Cantico>> GetAll()
+        public ActionResult<IEnumerable<CanticoDTO>> GetAll()
         {
             return Ok(_applicationServiceCantico.GetAll());
         }
@@ -43,6 +42,17 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         public ActionResult<string> GetById(Guid id)
         {
             return Ok(_applicationServiceCantico.GetById(id));
+        }
+
+        [HttpGet]
+        [Route("/cantico/search/{titulo}", Name = "CanticoGetByTitulo")]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(CanticoDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<IEnumerable<CanticoDTO>> GetByTitulo(string titulo)
+        {
+            return Ok(_applicationServiceCantico.GetByTitulo(titulo));
         }
 
         [HttpPost]

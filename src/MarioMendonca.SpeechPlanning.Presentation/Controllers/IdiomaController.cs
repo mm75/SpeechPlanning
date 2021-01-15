@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using MarioMendonca.SpeechPlanning.Application.DTO.DTO;
 using MarioMendonca.SpeechPlanning.Application.Interfaces;
-using MarioMendonca.SpeechPlanning.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,7 +28,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         [ProducesResponseType(typeof(IdiomaDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<IEnumerable<Idioma>> GetAll()
+        public ActionResult<IEnumerable<IdiomaDTO>> GetAll()
         {
             return Ok(_applicationServiceIdioma.GetAll());
         }
@@ -51,7 +50,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         [ProducesResponseType(typeof(IdiomaDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<IEnumerable<Idioma>> GetByNome(string nome)
+        public ActionResult<IEnumerable<IdiomaDTO>> GetByNome(string nome)
         {
             return Ok(_applicationServiceIdioma.GetByNome(nome));
         }

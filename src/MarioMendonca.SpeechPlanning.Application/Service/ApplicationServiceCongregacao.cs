@@ -30,6 +30,12 @@ namespace MarioMendonca.SpeechPlanning.Application.Service
             return _mapperCongregacao.MapperToDTO(objCongregacao);
         }
 
+        public IEnumerable<CongregacaoDTO> GetByNome(string nome)
+        {
+            var objCongregacoes = _serviceCongregacao.GetByNome(nome);
+            return _mapperCongregacao.MapperListCongregacoes(objCongregacoes);
+        }
+
         public IEnumerable<CongregacaoDTO> GetAll()
         {
             var objCongregacoes = _serviceCongregacao.GetAll();

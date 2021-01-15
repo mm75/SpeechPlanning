@@ -6,7 +6,7 @@ namespace MarioMendonca.SpeechPlanning.Domain.Models
     {
         public string Nome { get; set; }
         public string Telefone { get; set; }
-        public int CongregacaoId { get; set; }
+        public Guid CongregacaoId { get; set; }
         public bool Ativo { get; set; }
         public virtual Congregacao Congregacao { get; set; }
     }

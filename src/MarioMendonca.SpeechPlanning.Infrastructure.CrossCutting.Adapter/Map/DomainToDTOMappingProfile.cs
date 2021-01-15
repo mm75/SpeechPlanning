@@ -13,7 +13,7 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
             CreateMap<Congregacao, CongregacaoDTO>();
             CreateMap<Esboco, EsbocoDTO>()
                 .ForMember(dto => dto.IdiomaNome, opt =>
-                    opt.MapFrom(i => i.Idioma.Nome));
+                    opt.MapFrom(e => e.Idioma.Nome));
             CreateMap<Idioma, IdiomaDTO>()
                 .ForMember(dto => dto.Esbocos, opt =>
                     opt.MapFrom(i => i.Esbocos.Select(x =>
@@ -24,8 +24,18 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
                             Titulo = x.Titulo,
                             Idioma = x.Idioma
                         })));
-            CreateMap<Orador, OradorDTO>();
-            CreateMap<Programacao, ProgramacaoDTO>();
+            CreateMap<Orador, OradorDTO>()
+                .ForMember(dto => dto.CongregacaoNome, opt =>
+                    opt.MapFrom(o => o.Congregacao.Nome));
+            CreateMap<Programacao, ProgramacaoDTO>()
+                .ForMember(dto => dto.CongregacaoNome, opt =>
+                    opt.MapFrom(p => p.Congregacao.Nome))
+                .ForMember(dto => dto.OradorNome, opt =>
+                    opt.MapFrom(p => p.Orador.Nome))
+                .ForMember(dto => dto.EsbocoTitulo, opt =>
+                    opt.MapFrom(p => p.Esboco.Titulo))
+                .ForMember(dto => dto.CanticoTitulo, opt =>
+                    opt.MapFrom(p => p.Cantico.Titulo));
         }
     }
 }

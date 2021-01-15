@@ -21,7 +21,9 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
             {
                 Id = oradorDto.Id,
                 Nome = oradorDto.Nome,
-                Telefone = oradorDto.Telefone
+                Telefone = oradorDto.Telefone,
+                CongregacaoId = oradorDto.CongregacaoId,
+                Ativo = oradorDto.Ativo
             };
 
             return orador;
@@ -35,7 +37,10 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
                 {
                     Id = item.Id,
                     Nome = item.Nome,
-                    Telefone = item.Telefone
+                    Telefone = item.Telefone,
+                    CongregacaoId = item.CongregacaoId,
+                    CongregacaoNome = item.Congregacao.Nome,
+                    Ativo = item.Ativo
                 };
 
                 oradorDtos.Add(oradorDto);
@@ -50,7 +55,10 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map
             {
                 Id = orador.Id,
                 Nome = orador.Nome,
-                Telefone = orador.Telefone
+                Telefone = orador.Telefone,
+                CongregacaoId = orador.CongregacaoId,
+                CongregacaoNome = orador.Congregacao.Nome,
+                Ativo = orador.Ativo
             };
 
             return oradorDto;

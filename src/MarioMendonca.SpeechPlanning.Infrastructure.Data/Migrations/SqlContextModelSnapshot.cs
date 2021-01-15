@@ -169,10 +169,7 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
-                    b.Property<int>("CongregacaoId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("CongregacaoId1")
+                    b.Property<Guid>("CongregacaoId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -198,7 +195,7 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CongregacaoId1");
+                    b.HasIndex("CongregacaoId");
 
                     b.ToTable("Oradores");
                 });
@@ -209,11 +206,11 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CanticoId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CanticoId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CongregacaoId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CongregacaoId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -224,8 +221,8 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EsbocoId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("EsbocoId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Hora")
                         .HasColumnType("nvarchar(max)");
@@ -233,8 +230,8 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("OradorId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("OradorId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -267,7 +264,9 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data.Migrations
                 {
                     b.HasOne("MarioMendonca.SpeechPlanning.Domain.Models.Congregacao", "Congregacao")
                         .WithMany()
-                        .HasForeignKey("CongregacaoId1");
+                        .HasForeignKey("CongregacaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
