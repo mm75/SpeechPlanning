@@ -1,25 +1,36 @@
-name: .NET
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy ASP.Net Core app to Azure Web App - speech-planning
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+push:
+branches:
+- main
+workflow_dispatch:
 
 jobs:
-  build:
+build-and-deploy:
+runs-on: windows-latest
 
-    runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@master
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+- name: Set up .NET Core
+uses: actions/setup-dotnet@v1
+with:
+dotnet-version: '3.1.301'
+
+- name: Build with dotnet
+run: dotnet build --configuration Release
+
+- name: dotnet publish
+run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+- name: Deploy to Azure Web App
+uses: azure/webapps-deploy@v2
+with:
+app-name: 'speech-planning'
+slot-name: 'production'
+publish-profile: ${{ secrets.AzureAppService_PublishProfile_a20ae11fb17544e29375076d5b205a46 }}
+package: ${{env.DOTNET_ROOT}}/myapp
