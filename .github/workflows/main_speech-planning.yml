@@ -6,7 +6,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - speech-planning
 on:
 push:
 branches:
-- main
+  - main
 workflow_dispatch:
 
 jobs:
@@ -14,20 +14,20 @@ build-and-deploy:
 runs-on: windows-latest
 
 steps:
-- uses: actions/checkout@master
+  - uses: actions/checkout@master
 
-- name: Set up .NET Core
+  - name: Set up .NET Core
 uses: actions/setup-dotnet@v1
 with:
 dotnet-version: '3.1.301'
 
-- name: Build with dotnet
+  - name: Build with dotnet
 run: dotnet build --configuration Release
 
-- name: dotnet publish
+  - name: dotnet publish
 run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-- name: Deploy to Azure Web App
+  - name: Deploy to Azure Web App
 uses: azure/webapps-deploy@v2
 with:
 app-name: 'speech-planning'
