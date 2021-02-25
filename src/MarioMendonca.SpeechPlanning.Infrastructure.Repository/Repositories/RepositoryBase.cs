@@ -5,7 +5,7 @@ using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Repositorys;
 using MarioMendonca.SpeechPlanning.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositorys
+namespace MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositories
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {

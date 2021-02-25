@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using MarioMendonca.SpeechPlanning.Application.DTO.DTO;
 using MarioMendonca.SpeechPlanning.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -24,6 +25,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/congregacao/", Name = "CongregacaoGetAll")]
         [ProducesResponseType(typeof(CongregacaoDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -34,6 +36,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/congregacao/{id}", Name = "CongregacaoGetById")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CongregacaoDTO), StatusCodes.Status200OK)]
@@ -45,6 +48,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("/congregacao/search/{nome}", Name = "CongregacaoGetByNome")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CongregacaoDTO), StatusCodes.Status200OK)]
@@ -56,6 +60,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CongregacaoDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -77,6 +82,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CongregacaoDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -89,7 +95,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
                     return NotFound();
 
                 _applicationServiceCongregacao.Update(congregacaoDto);
-                
+
                 return Ok("Congregação atualizada com sucesso!");
             }
             catch (Exception ex)
@@ -99,6 +105,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
         }
 
         [HttpDelete()]
+        [Authorize]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CongregacaoDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -111,7 +118,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Controllers
                     return NotFound();
 
                 _applicationServiceCongregacao.Remove(congregacaoDto);
-                
+
                 return Ok("Congregação removida com sucesso!");
             }
             catch (Exception ex)

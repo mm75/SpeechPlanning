@@ -5,7 +5,7 @@ using MarioMendonca.SpeechPlanning.Domain.Models;
 using MarioMendonca.SpeechPlanning.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositorys
+namespace MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositories
 {
     public class RepositoryIdioma : RepositoryBase<Idioma>, IRepositoryIdioma
     {

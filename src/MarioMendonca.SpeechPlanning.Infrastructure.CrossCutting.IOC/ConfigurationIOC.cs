@@ -6,7 +6,7 @@ using MarioMendonca.SpeechPlanning.Domain.Core.Interfaces.Services;
 using MarioMendonca.SpeechPlanning.Domain.Services.Services;
 using MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Interfaces;
 using MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map;
-using MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositorys;
+using MarioMendonca.SpeechPlanning.Infrastructure.Repository.Repositories;
 
 namespace MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.IOC
 {

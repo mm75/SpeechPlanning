@@ -4,6 +4,7 @@ using MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.Adapter.Map;
 using MarioMendonca.SpeechPlanning.Infrastructure.CrossCutting.IOC;
 using MarioMendonca.SpeechPlanning.Infrastructure.Data;
 using MarioMendonca.SpeechPlanning.Presentation.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -28,6 +29,16 @@ namespace MarioMendonca.SpeechPlanning.Presentation
         {
             services.AddControllers();
 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = Configuration["Oauth0:Authority"];
+                options.Audience = Configuration["Oauth0:Audience"];
+            });
+            
             services.RegisterMappings();
 
             string connection = Configuration["SqlConnection:SqlConnectionString"];
@@ -70,6 +81,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             
             app.UseSwaggerConfiguration();
