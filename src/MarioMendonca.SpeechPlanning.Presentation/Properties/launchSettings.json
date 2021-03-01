@@ -24,7 +24,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Oauth0__Authority": "https://mariomendonca.us.auth0.com/",
-        "Oauth0__Audience": "https://localhost:5001"
+        "Oauth0__Audience": "https://localhost:5001",
+        "SqlConnection:SqlConnectionString": "Server=den1.mssql7.gear.host;Database=speechplanning;User Id=speechplanning;Password=Bz3t8P3A~8P?;"
       }
     }
   }
