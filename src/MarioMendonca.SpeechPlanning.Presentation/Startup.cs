@@ -41,7 +41,7 @@ namespace MarioMendonca.SpeechPlanning.Presentation
             
             services.RegisterMappings();
 
-            string connection = Configuration["SqlConnectionString"];
+            string connection = Configuration.GetConnectionString("defaultConnection");
             services.AddDbContext<SqlContext>(options => options.UseSqlServer(connection));
             services.AddMemoryCache();
             
