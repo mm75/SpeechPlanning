@@ -23,11 +23,6 @@ namespace MarioMendonca.SpeechPlanning.Infrastructure.Data
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Esboco>()
-                .HasOne(e => e.Idioma)
-                .WithMany(i => i.Esbocos)
-                .HasForeignKey(e => e.IdiomaId);
-            
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SqlContext).Assembly);
         }
 
