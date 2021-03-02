@@ -19,7 +19,8 @@ namespace MarioMendonca.SpeechPlanning.Presentation
 
             ExecuteMigrations.Execute(host);
 
-            host.Run();        }
+            host.Run();
+        }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
