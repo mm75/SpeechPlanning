@@ -4,33 +4,33 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - speechplanning
 
 on:
-push:
-branches:
-- main
-workflow_dispatch:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-build-and-deploy:
-runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-steps:
-- uses: actions/checkout@master
+    steps:
+    - uses: actions/checkout@master
 
-- name: Set up .NET Core
-uses: actions/setup-dotnet@v1
-with:
-dotnet-version: '3.1.301'
+  - name: Set up .NET Core
+    uses: actions/setup-dotnet@v1
+    with:
+      dotnet-version: '3.1.301'
 
-- name: Build with dotnet
-run: dotnet build --configuration Release
+  - name: Build with dotnet
+    run: dotnet build --configuration Release
 
-- name: dotnet publish
-run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+  - name: dotnet publish
+    run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-- name: Deploy to Azure Web App
-uses: azure/webapps-deploy@v2
-with:
-app-name: 'speechplanning'
-slot-name: 'production'
-publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-package: ${{env.DOTNET_ROOT}}/myapp
+  - name: Deploy to Azure Web App
+    uses: azure/webapps-deploy@v2
+    with:
+      app-name: 'speechplanning'
+      slot-name: 'production'
+      publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+      package: ${{env.DOTNET_ROOT}}/myapp
