@@ -38,7 +38,11 @@ namespace MarioMendonca.SpeechPlanning.Presentation.Extensions
         public static IApplicationBuilder UseSwaggerConfiguration(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1"); });
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = String.Empty;
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
 
             return app;
         }
